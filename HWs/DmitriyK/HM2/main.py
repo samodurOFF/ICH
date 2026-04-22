@@ -17,7 +17,6 @@ class User(BaseModel):
     address: Address
 
     @field_validator("age")
-    @classmethod
     def validate_age_and_employment(cls, value: int, info):
         is_working = info.data.get("is_employed")
 
